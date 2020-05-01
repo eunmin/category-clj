@@ -36,6 +36,8 @@
       (map f fa))
 
     Monad
-    (flat-map [this ma f])
+    (flat-map [this ma f]
+      (flatten (map f ma)))
 
-    (unit [this a])))
+    (unit [this a]
+      (list a))))

@@ -3,6 +3,7 @@
             [category-clj.functor :refer :all]
             [category-clj.foldable :refer :all]
             [category-clj.instance.list :as list]
+            [category-clj.monad :refer [map2]]
             [category-clj.monoid :refer :all]))
 
 ;; Monoid
@@ -45,5 +46,6 @@
 (codistribute list/instance (either/right [1 2 3]))
 
 
+;; Monad
 
-
+(map2 list/instance [1] [2] (fn [a b] (str a b)))
